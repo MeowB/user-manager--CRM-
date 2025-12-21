@@ -115,14 +115,34 @@ This phase focuses on establishing the technical foundation of the application, 
 
 --- 
 
+### 5. Server-state & First Data-Driven Screen
+This step introduces server-state management into the appllication and connects the UI to real, asynchronous data.
+
+**Purpose:** Demonstrate the use of TanStack Query to manage server-state in a predictable, scalable way while keeping a clean separation between data fetching logic and UI rendering.
+
+#### Approach:
+1. Configure a global TanStack Query client and provider at the application root.
+2. Define a typed mock users API to simulate real-world data fetching.
+3. Fetch users on the Users page using useQuery hooks.
+4. Rendre a minimal list driven by asynchronous data.
+5. Explicitly handle loading and error states in the UI.
+
+#### Deliverables:
+- TanStack Query client and provider wired into the app
+- A mock users data source with async behavior and error simulation
+- A User page fetching data through TanStack Query
+- A simple list rendering user information
+- Clear loading and error states displayed to the user
+
+> **Note:** This phase focuses on data fetching and server-state management only. The mock API mirrors a real backend response allowing for future integration.
+
 ### 5. Next Step
-This next session will focus on introducing server-state management and rendering the first real data-driven screen.
+Improve data presentation by replacing the basic users list with a structured table component, without changing the existing data-fetching logic.
 
 Key tasks include:
-- Set up TanStack Query with a query client and provider
-- Create a mock users data source (static or JSON-based)
-- Fetch users on the Users page
-- Render a simple users list (no table, no CRUD yet)
-- Handle basic loading and error states
+- Install and configure shadcn/ui
+- Create a reusable UsersTable component
+- Display useres data in a table layout with columns for Name, Email, Role.
+- keep TanStack Query setup and API contracts unchanged.
 
 **Goal:** By the end of this session, the Users page displays real data fetched through TanStack Query.
