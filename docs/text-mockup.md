@@ -91,7 +91,13 @@ This is a concise first thinking about the mockup to ease the process
 - Upcoming / Overdue Tasks (List or Mini Table)
 
 ```
-
+**Behavior:**
+```txt
+ Dashboard Page
+ ├─ (if role === Admin) FilterBar
+ ├─ KPIs (based on selected scope)
+ └─ Summaries (based on selected scope)
+ ```
 ### Leads List Page
 ```mathematica
 [Navbar: Logo | Dashboard | Leads | Deals | Activities | Users | Profile]

@@ -23,7 +23,14 @@ const UsersPage = () => {
 
 
 	return (
-		<UsersTable users={usersResponse.data} />
+		<div className="max-w-4xl mx-auto">
+			<h1 className="text-2xl font-semibold">Users</h1>
+			<p className="text-sm text-muted-foreground mt-1">
+				List of registered users and their current status.
+			</p>
+			
+			<UsersTable users={usersResponse.data} />
+		</div>
 	)
 }
 

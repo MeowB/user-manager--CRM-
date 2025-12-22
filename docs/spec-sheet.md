@@ -408,11 +408,13 @@ A basic user login system with role-based permissions (Admin, Sales Agent, Viewe
 - Activities Timeline Page
 - Dashboard Page
 
+---
+
 ## 10. User Flows
 
 `login → view dashboard → navigate to leads → create new lead → convert lead to deal → move deal through pipeline → log activity → logout`
 
-> **Sales Agent creates and works on a new lead**  
+> **Sales Agent creates and works on a new lead** <br>
 > Example:  
 > 
 > They open the Leads page, click “Add Lead,” enter the contact information, and save.  
@@ -452,4 +454,20 @@ A basic user login system with role-based permissions (Admin, Sales Agent, Viewe
 > > - Pipeline Value: $75,000
 > > - New Leads: 40
 > > - User: Mark Johnson, Role: Sales Agent
+---
+> **Viewer Reviews Sales Activities**<br>
+> Example:
+>
+>A Viewer logs into the application to monitor overall sales performance.They are not involved in day-to-day operations but need visibility into the health of the pipeline and conversion trends.
+> They navigate to the Dashboard to see high-level KPIs and then check the Activities page to review recent interactions logged by the sales team.
+>
+> This will render as:
+> > - Total Deals: 80  
+> > - Conversion Rate: 25%  
+> > - Recent Activities:
+> >   - Call logged on [date]  
+> >   - Task completed on [date]  
+> >   - Meeting held on [date]  
+> >
+> > *(Activities are read-only and not attributed to individual users.)*
 ---

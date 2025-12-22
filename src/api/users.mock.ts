@@ -24,7 +24,7 @@ export async function getUsers(): Promise<UserResponse> {
 		data: [
 			{ id: '1', email: 'admin@test.com', role: 'admin', status: 'active' },
 			{ id: '2', email: 'salesAgent@test.com', role: 'salesAgent', status: 'active' },
-			{ id: '3', email: 'viewer@test.com', role: 'viewer', status: 'active' }
+			{ id: '3', email: 'viewer@test.com', role: 'viewer', status: 'disabled' }
 		]
 	}
 }

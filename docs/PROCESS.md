@@ -155,22 +155,44 @@ This step enhances the Users page by integrating a structured table component fr
 
 ---
 
+### Users Page UX & Visual Refinements
+
+This step focuses on improving the visual clarity of the Users page through light UI and UX enhancements, while keeping all existing logic, data fetching, and component structure unchanged.
+
+**Purpose:**  
+To make the Users page easier to read and understand at a glance by adding contextual framing, clear user state indicators, and subtle visual polish without introducing new features or complexity.
+
+#### Approach:
+1. Add a page title and short descriptive text to provide context.
+2. Ensure consistent alignment between page content and the users table.
+3. Implement an empty state message for cases where no users are available.
+4. Improve the visual representation of user status using a subtle badge.
+5. Apply minimal table-level visual refinements for readability (row distinction, compact status column, borders).
+6. Preserve existing TanStack Query logic and shadcn/ui integration.
+
+#### Deliverables:
+- Users page with clear title and description.
+- Users table with visual status indicators for user state.
+- Empty state handling when no users are present.
+- Improved table readability through subtle visual cues.
+- No changes to data flow, fetching logic, or application behavior.
+
+---
+
 ### Next Step
-Improve the usability and clarity of the Users page by adding basic UX refinements, without introducing new data-fetching logic or CRUD functionality.
+Introduce basic user actions on the Users page by adding an Actions column, enabling interaction with individual users while keeping the existing data structure and UI foundation intact.
 
 Key tasks include:
-- Handle the empty users state with clear message
-- Improve the visual representation of user status 
-- apply minimal table-level polish for readability (striped rows, hover effects)
-- Keep tanStack Query and shadcn/ui integration intact
+- Add an Actions column to the Users table.
+- Display placeholder action buttons (e.g. Edit, Delete) for each user.
+- Ensure actions are visually clear but non-functional at this stage.
+- Keep all existing data-fetching logic, domain types, and UX refinements unchanged.
 
-### UX & Visual Enhancements Checklist
+### Checklist
+- [ ] Add an Actions column to the Users table
+- [ ] Display action buttons for each user row
+- [ ] Ensure consistent alignment and spacing with existing columns
+- [ ] Keep actions disabled or non-functional (UI only)
+- [ ] Preserve current UX and visual styling
 
-- [ ] Page title above the table  
-- [ ] Optional short description under the title  
-- [ ] Empty state message when no users are available  
-- [ ] Visual status indicator for user status (active / disabled)  
-- [ ] Improved table spacing and alignment for readability  
-- [ ] Subtle visual boundary around the table container  
-
-**Goal:** By the end of this session, the Users page clearly communicates all relevant user states and feels complete from a UX standpoint.
+**Goal:** By the end of this session, the Users page visually supports user-level actions and feels ready for future CRUD functionality without adding new logic.
