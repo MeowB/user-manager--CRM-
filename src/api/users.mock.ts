@@ -7,7 +7,7 @@
  
 */
 
-import type { User } from "../domain/user"
+import type { User } from "@/domain/user"
 
 export type UserResponse = {
 	data: User[]

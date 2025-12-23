@@ -2,20 +2,23 @@ import {
 	Table,
 	TableBody,
 	TableCell,
-	TableFooter,
 	TableHead,
 	TableHeader,
 	TableRow,
-} from "../../../components/ui/table"
-import { Button } from "../../../components/ui/button"
+} from "@/components/ui/table"
+import { Button } from "@/components/ui/button"
 
-import type { User } from "../../../domain/user"
+import type { User } from "@/domain/user"
+import { useState } from "react"
+import CreateUserModal from "@/features/users/components/CreateUserModal"
 
 type UsersTableProps = {
 	users: User[],
 }
 
 const UsersTable = ({ users }: UsersTableProps) => {
+	const [isCreateOpen, setIsCreateOpen] = useState<boolean>(false)
+
 	return (
 		<div className="w-full flex flex-col">
 			<div className="mt-6 rounded-md border">
@@ -67,7 +70,8 @@ const UsersTable = ({ users }: UsersTableProps) => {
 				</Table>
 			</div>
 			<div className="mt-2 ml-auto">
-				<Button disabled className="cursor-pointer" size="sm">+ Add User</Button>
+				<Button className="cursor-pointer" size="sm" onClick={() => setIsCreateOpen(true)}>+ Add User</Button>
+				<CreateUserModal open={isCreateOpen} setOpen={setIsCreateOpen}/>
 			</div>
 		</div>
 	)
