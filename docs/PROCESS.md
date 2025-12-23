@@ -179,20 +179,61 @@ To make the Users page easier to read and understand at a glance by adding conte
 
 ---
 
-### Next Step
-Introduce basic user actions on the Users page by adding an Actions column, enabling interaction with individual users while keeping the existing data structure and UI foundation intact.
+### Users Page – Actions Column (UI Only)
 
-Key tasks include:
-- Add an Actions column to the Users table.
-- Display placeholder action buttons (e.g. Edit, Delete) for each user.
-- Ensure actions are visually clear but non-functional at this stage.
-- Keep all existing data-fetching logic, domain types, and UX refinements unchanged.
+This step focuses on extending the Users page with a visual foundation for user-level actions, without introducing any new logic, state management, or data mutations.
 
-### Checklist
-- [ ] Add an Actions column to the Users table
-- [ ] Display action buttons for each user row
-- [ ] Ensure consistent alignment and spacing with existing columns
-- [ ] Keep actions disabled or non-functional (UI only)
-- [ ] Preserve current UX and visual styling
+**Purpose:**  
+To visually prepare the Users page for future CRUD functionality by introducing an Actions column and clearly signposting available user interactions, while keeping the application behavior unchanged.
 
-**Goal:** By the end of this session, the Users page visually supports user-level actions and feels ready for future CRUD functionality without adding new logic.
+#### Approach:
+1. Add an Actions column to the Users table layout.
+2. Display placeholder action buttons (Edit, Delete) for each user row.
+3. Ensure action buttons are visually clear and consistently aligned with existing table content.
+4. Keep all actions non-functional or disabled (UI-only).
+
+#### Deliverables:
+- Users table with an Actions column.
+- Placeholder Edit and Delete buttons for each user.
+
+---
+
+### Next Step Add User Flow (UI & Form Validation)
+Introduce user creation by wiring the “Add User” action to a controlled UI flow (modal or dedicated view), focusing on form structure and validation before integrating persistence.
+
+**Goal:**  
+Enable user creation in a controlled and incremental way, starting with UI and form validation while keeping side effects and mutations tightly scoped.
+
+#### Checklist:
+**UI Structure:**
+- [ ] Decide entry point (modal vs. dedicated page).
+- [ ] Create Add User UI container (component/modal).
+- [ ] Wire "+ Add User" button to open the UI container.
+- [ ] Ensure layout matches existing Users page spacing.
+
+**Form Structure:**
+- [ ] Create add User form component.
+- [ ] Include fields: Email, Role (select), Status (dropdown).
+- [ ] Add Submit and Cancel buttons.
+
+**Form Validation (zod / RHF):**
+- [ ] Integrate React Hook Form for form state management.
+- [ ] Define validation schema with zod (email format, required fields).
+- [ ] Connect validation schema to form.
+- [ ] Display validation errors inline.
+- [ ] Disable Submit button until form is valid.
+
+**Constraints:**
+- [ ] No API calls
+- [ ] No TanStack mutations
+- [ ] No optimistic updates
+- [ ] No table updates on submit
+- [ ] No global state changes
+
+**Exit Condition:**
+- [ ] Form opens and closes correctly
+- [ ] Validation works visually
+- [ ] Submit button is inert (no persistence)
+- [ ] Users table remains unchanged
+
+> **Note:** User creation currently excludes password handling by design. Authentication and credential management are introduced in a dedicated Auth phase to avoid premature security coupling.
