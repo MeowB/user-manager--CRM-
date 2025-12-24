@@ -7,6 +7,9 @@ that will later support lead management and deal tracking features.
 The project evolves step by step, with features added only once they are fully
 implemented and documented.
 
+## Related Repositories
+- Backend: https://github.com/MeowB/user-manager--CRM-backend
+
 ## Tech Stack
 - React
 - TypeScript

@@ -155,7 +155,7 @@ This step enhances the Users page by integrating a structured table component fr
 
 ---
 
-### Users Page UX & Visual Refinements
+### 7. Users Page UX & Visual Refinements
 
 This step focuses on improving the visual clarity of the Users page through light UI and UX enhancements, while keeping all existing logic, data fetching, and component structure unchanged.
 
@@ -179,7 +179,7 @@ To make the Users page easier to read and understand at a glance by adding conte
 
 ---
 
-### Users Page – Actions Column (UI Only)
+### 8. Users Page – Actions Column (UI Only)
 
 This step focuses on extending the Users page with a visual foundation for user-level actions, without introducing any new logic, state management, or data mutations.
 
@@ -198,7 +198,7 @@ To visually prepare the Users page for future CRUD functionality by introducing 
 
 ---
 
-### Create User - Modal Form with Validation (UI Only)
+### 9. Create User - Modal Form with Validation (UI Only)
 Implemented a controlled "Create User" flow using a modal, focusing on form structure, state management, and validation without introducing persistence or side effects. This setp establishes a solid UI and validation foundation before integrating backend functionality.
 
 **Purpose:**  
@@ -226,19 +226,49 @@ To enable user creation through a modal form that includes proper structure and 
 >**Note:** A minor validation flash can occur during modal close due to Radix Dialog focus and RHF re-rendre timing. This was accepted as a non-blocking UX edge case to avoid unnecessary complexity.
 ---
 
-### Next Step Backend Foundation (postgres + prisma + express)
-Set up the backend infrastructure required for user persistence by introducing a Postgres database, prisma ORM, and an Express server skeleton. Without implementing any user-specific logic yet.
+### 10. Backend Foundation - Database, ORM, and Server Setup
+Backend groundwork for the application, establishing a fully functional database layer, ORM integration and Express server with diagnostic endpoint.
+
+**Purpose:**
+Build a stable, production-shaped backend foundation capable of connecting to a real PostgreSQL database, exposing a running API server, and providing runtime health diagnostics.
+
+#### Approach:
+1. Initialize a dedicated backend codebase.
+2. Set up a local PostgreSQL database.
+3. Configure Prisma ORM(v7) with a PostgreSQL driver adapter.
+4. Define the initial database schema with a User model and apply migrations.
+5. Generate and validate the Prisma Client.
+6. Initialize an Express server with TypeScript support.
+7. Implement a health-check endpoint that verifies server status and database connectivity.
+8. Implement routing into isolated modules for future API routes.
+
+#### Deliverables:
+- Backend codebase initialized.
+- Local PostgreSQL database running.
+- Prisma configured with PostgreSQL.
+- User model defined and migrated.
+- Prisma client generated and validated.
+- Express server initialized with TypeScript.
+- Health-check endpoint confirming server and database status.
+
+> **Note:** This phase focuses on backend infrastructure only. No user-specific API routes or frontend integration are implemented yet.
+
+---
+### Next Step Admin-Driven User Management & Credential Flow
+Introduce user management capabilities aligned with an internal CRM model, where administrators create and manage user accounts. This phase establishes secure credential handling and role-based access foundations without implementing public registration or email-based onboarding.
 
 **Goal:**
-Establish a running backend environment capable of connecting to a real databasem, providing a stable foundation on which user-related API routes and frontend integration can be built incrementally.
+Enable controlled creation of user accounts by administrators, enforce role and status constraints, and provide a secure password change mechanism ensuring users can safely manage their credentials after initial provisioning.
 
 **checklist:**
-- [ ] Backend folder initialized
-- [ ] Postgres running locally
-- [ ] Prisma initialized in backend
-- [ ] .env configured with database URL
-- [ ] User model defined in schema.prisma
-- [ ] Initial migration applied successfully
-- [ ] Prisma client generated
-- [ ] Express server boots successfully
-- [ ] Health-check endpoint reachable
+- [ ] Define admin-only user creation route (POST /users)
+	- enforced via role check middlware
+- [ ] Accept user attributes (email, role, status)
+- [ ] Mark newly created users as requiring password change on first login
+- [ ] Hash all passwords before persistence
+- [ ] Prevent duplicate users via unique email constraint
+- [ ] Implement login endpoint (POST /auth/login)
+- [ ] Enforce mandatory password change on first login
+- [ ] Implement password change endpoint (POST /auth/change-password)
+- [ ] Restrict protected routes based on user role and status
+- [ ] Document user management and authentication routes

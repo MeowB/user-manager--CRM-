@@ -42,8 +42,9 @@ This is a concise first thinking about the mockup to ease the process
 ### Login Page
 
 ```mathematica
-[Centered Card Container]
+[Splitted Card Container]
 
+--------------------------------------------------
 [App Logo]
 [App Name or Tagline]
 
@@ -69,10 +70,31 @@ This is a concise first thinking about the mockup to ease the process
 [Helper Text]
 *Demo accounts for portfolio showcase purposes only*
 
+--------------------------------------------------
+
+[Information Panel: Access & Roles]
+
+[Panel Title: About Access]
+
+This application is designed as an internal CRM.
+User accounts are created and managed by administrators.
+
+[Role Overview]
+- **Admin**
+  Full access. Manages users, roles, and system configuration.
+- **Sales Agent**
+  Manages leads and customer-related data.
+- **Viewer**
+  Read-only access for reporting and monitoring.
+
+Public account creation is intentionally disabled for this internal application.
+
+--------------------------------------------------
+
 [Footer Links]
-- Don't have an account? Sign up
 - Privacy Policy | Terms of Service
 ```
+
 ### Dashboard Page
 ```mathematica
 [Navbar]

@@ -1,8 +1,9 @@
 {
-  "name": "front-end",
+  "name": "user-manager-front-end",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "author": "Scott Borlon",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
